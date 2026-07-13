@@ -1,8 +1,8 @@
-<UCIS xmlns:ucis="http://www.w3.org/2001/XMLSchema-instance" writtenBy="vsysuser" writtenTime="2026-07-13T06:08:18" ucisVersion="1.0">
+<UCIS xmlns:ucis="http://www.w3.org/2001/XMLSchema-instance" writtenBy="vsysuser" writtenTime="2026-07-13T08:09:48" ucisVersion="1.0">
   <sourceFiles fileName="__null__file__" id="1"/>
   <sourceFiles fileName="&lt;unknown&gt;" id="2"/>
   <sourceFiles fileName="/home/vsysuser/workspace/verif-desanv01/mul_64bit/test_multiplier_64.py" id="3"/>
-  <historyNodes historyNodeId="0" logicalName="logicalName" physicalName="foo.ucis" kind="HistoryNodeKind.TEST" testStatus="true" simtime="0.0" timeunit="ns" runCwd="." cpuTime="0.0" seed="0" cmd="" args="" compulsory="0" date="2026-07-13T06:08:18" userName="user" cost="0.0" toolCategory="UCIS:simulator" ucisVersion="1.0" vendorId="unknown" vendorTool="unknown" vendorToolVersion="unknown"/>
+  <historyNodes historyNodeId="0" logicalName="logicalName" physicalName="foo.ucis" kind="HistoryNodeKind.TEST" testStatus="true" simtime="0.0" timeunit="ns" runCwd="." cpuTime="0.0" seed="0" cmd="" args="" compulsory="0" date="2026-07-13T08:09:48" userName="user" cost="0.0" toolCategory="UCIS:simulator" ucisVersion="1.0" vendorId="unknown" vendorTool="unknown" vendorToolVersion="unknown"/>
   <instanceCoverages name="cg_inst" key="0" instanceId="0" moduleName="du">
     <id file="1" line="1" inlineCount="1"/>
     <covergroupCoverage>
@@ -14,47 +14,741 @@
         </cgId>
         <coverpoint name="cp_a" key="0">
           <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
-          <coverpointBin name="zero" type="bins" key="0">
+          <coverpointBin name="minimum" type="bins" key="0">
             <range from="-1" to="-1">
               <contents coverageCount="2"/>
             </range>
           </coverpointBin>
           <coverpointBin name="one" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="2"/>
+              <contents coverageCount="1"/>
             </range>
           </coverpointBin>
           <coverpointBin name="low_32bit" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="2"/>
+              <contents coverageCount="31"/>
             </range>
           </coverpointBin>
           <coverpointBin name="high_64bit" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="15"/>
+              <contents coverageCount="326"/>
             </range>
           </coverpointBin>
         </coverpoint>
         <coverpoint name="cp_b" key="0">
           <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
-          <coverpointBin name="zero" type="bins" key="0">
+          <coverpointBin name="minimum" type="bins" key="0">
             <range from="-1" to="-1">
               <contents coverageCount="2"/>
             </range>
           </coverpointBin>
           <coverpointBin name="one" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="2"/>
+              <contents coverageCount="1"/>
             </range>
           </coverpointBin>
           <coverpointBin name="low_32bit" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="5"/>
+              <contents coverageCount="31"/>
             </range>
           </coverpointBin>
           <coverpointBin name="high_64bit" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="12"/>
+              <contents coverageCount="326"/>
+            </range>
+          </coverpointBin>
+        </coverpoint>
+        <coverpoint name="cp_scenario" key="0">
+          <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
+          <coverpointBin name="minimum_x_minimum" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="1"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="maximum_x_maximum" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="1"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="minimum_x_maximum" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="1"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="maximum_x_minimum" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="1"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="walking_ones" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="128"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="walking_zeros" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="128"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="random_100" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="100"/>
+            </range>
+          </coverpointBin>
+        </coverpoint>
+        <coverpoint name="cp_walking_one_bit" key="0">
+          <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
+          <coverpointBin name="bit_positions[0]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[1]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[2]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[3]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[4]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[5]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[6]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[7]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[8]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[9]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[10]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[11]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[12]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[13]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[14]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[15]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[16]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[17]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[18]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[19]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[20]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[21]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[22]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[23]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[24]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[25]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[26]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[27]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[28]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[29]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[30]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[31]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[32]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[33]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[34]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[35]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[36]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[37]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[38]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[39]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[40]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[41]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[42]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[43]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[44]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[45]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[46]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[47]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[48]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[49]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[50]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[51]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[52]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[53]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[54]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[55]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[56]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[57]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[58]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[59]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[60]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[61]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[62]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[63]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="not_applicable" type="ignore" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="232"/>
+            </range>
+          </coverpointBin>
+        </coverpoint>
+        <coverpoint name="cp_walking_zero_bit" key="0">
+          <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
+          <coverpointBin name="bit_positions[0]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[1]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[2]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[3]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[4]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[5]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[6]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[7]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[8]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[9]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[10]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[11]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[12]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[13]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[14]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[15]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[16]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[17]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[18]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[19]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[20]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[21]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[22]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[23]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[24]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[25]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[26]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[27]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[28]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[29]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[30]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[31]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[32]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[33]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[34]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[35]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[36]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[37]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[38]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[39]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[40]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[41]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[42]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[43]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[44]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[45]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[46]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[47]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[48]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[49]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[50]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[51]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[52]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[53]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[54]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[55]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[56]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[57]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[58]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[59]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[60]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[61]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[62]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="bit_positions[63]" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="not_applicable" type="ignore" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="232"/>
             </range>
           </coverpointBin>
         </coverpoint>
@@ -67,7 +761,7 @@
           </coverpointBin>
           <coverpointBin name="nonzero" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="19"/>
+              <contents coverageCount="358"/>
             </range>
           </coverpointBin>
         </coverpoint>
@@ -80,7 +774,7 @@
           </coverpointBin>
           <coverpointBin name="nonzero" type="bins" key="0">
             <range from="-1" to="-1">
-              <contents coverageCount="19"/>
+              <contents coverageCount="358"/>
             </range>
           </coverpointBin>
         </coverpoint>
@@ -102,7 +796,7 @@
           </crossBin>
           <crossBin name="&lt;nonzero,nonzero&gt;" key="0" type="default">
             <index>-1</index>
-            <contents coverageCount="18"/>
+            <contents coverageCount="357"/>
           </crossBin>
         </cross>
       </cgInstance>

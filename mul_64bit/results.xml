@@ -1,8 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1783922895" />
-    <testcase name="multiplier_basic_test" classname="test_multiplier_64" file="/home/vsysuser/workspace/verif-desanv01/mul_64bit/test_multiplier_64.py" lineno="104" time="0.04198455810546875" sim_time_ns="680.0" ratio_time="16196.431037615846" />
-    <testcase name="multiplier_corner_cases_test" classname="test_multiplier_64" file="/home/vsysuser/workspace/verif-desanv01/mul_64bit/test_multiplier_64.py" lineno="123" time="0.049271345138549805" sim_time_ns="6540.0" ratio_time="132734.350596877" />
-    <testcase name="multiplier_randomised_test" classname="test_multiplier_64" file="/home/vsysuser/workspace/verif-desanv01/mul_64bit/test_multiplier_64.py" lineno="155" time="0.06205391883850098" sim_time_ns="6540.0" ratio_time="105392.21571196397" />
+    <property name="random_seed" value="1783930186" />
+    <testcase name="multiplier_complete_coverage_test" classname="test_multiplier_64" file="/home/vsysuser/workspace/verif-desanv01/mul_64bit/test_multiplier_64.py" lineno="252" time="0.5729584693908691" sim_time_ns="234030.0" ratio_time="408458.9241674094" />
   </testsuite>
 </testsuites>
