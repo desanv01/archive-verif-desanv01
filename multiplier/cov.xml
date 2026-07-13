@@ -1,0 +1,129 @@
+<UCIS xmlns:ucis="http://www.w3.org/2001/XMLSchema-instance" writtenBy="vsysuser" writtenTime="2026-07-13T08:40:39" ucisVersion="1.0">
+  <sourceFiles fileName="__null__file__" id="1"/>
+  <sourceFiles fileName="&lt;unknown&gt;" id="2"/>
+  <sourceFiles fileName="/home/vsysuser/workspace/verif-desanv01/multiplier/test_multiplier64_tree.py" id="3"/>
+  <historyNodes historyNodeId="0" logicalName="logicalName" physicalName="foo.ucis" kind="HistoryNodeKind.TEST" testStatus="true" simtime="0.0" timeunit="ns" runCwd="." cpuTime="0.0" seed="0" cmd="" args="" compulsory="0" date="2026-07-13T08:40:39" userName="user" cost="0.0" toolCategory="UCIS:simulator" ucisVersion="1.0" vendorId="unknown" vendorTool="unknown" vendorToolVersion="unknown"/>
+  <instanceCoverages name="cg_inst" key="0" instanceId="0" moduleName="du">
+    <id file="1" line="1" inlineCount="1"/>
+    <covergroupCoverage>
+      <cgInstance name="TreeMultiplierCovergroup" key="0">
+        <options weight="1" goal="100" at_least="1" per_instance="true" merge_instances="true"/>
+        <cgId cgName="TreeMultiplierCovergroup" moduleName="TreeMultiplierCovergroup">
+          <cginstSourceId file="1" line="1" inlineCount="1"/>
+          <cgSourceId file="1" line="1" inlineCount="1"/>
+        </cgId>
+        <coverpoint name="cp_a" key="0">
+          <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
+          <coverpointBin name="zero" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="one" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="low_32bit" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="4"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="high_64bit" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="105"/>
+            </range>
+          </coverpointBin>
+        </coverpoint>
+        <coverpoint name="cp_b" key="0">
+          <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
+          <coverpointBin name="zero" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="one" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="low_32bit" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="4"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="high_64bit" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="105"/>
+            </range>
+          </coverpointBin>
+        </coverpoint>
+        <coverpoint name="cp_test_type" key="0">
+          <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
+          <coverpointBin name="basic" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="1"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="directed" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="12"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="random" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="100"/>
+            </range>
+          </coverpointBin>
+        </coverpoint>
+        <coverpoint name="cp_a_zero_state" key="0">
+          <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
+          <coverpointBin name="zero" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="nonzero" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="111"/>
+            </range>
+          </coverpointBin>
+        </coverpoint>
+        <coverpoint name="cp_b_zero_state" key="0">
+          <options weight="1" goal="100" at_least="1" auto_bin_max="64" detect_overlap="false"/>
+          <coverpointBin name="zero" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="2"/>
+            </range>
+          </coverpointBin>
+          <coverpointBin name="nonzero" type="bins" key="0">
+            <range from="-1" to="-1">
+              <contents coverageCount="111"/>
+            </range>
+          </coverpointBin>
+        </coverpoint>
+        <cross name="cp_a_x_b" key="0">
+          <options weight="1" goal="100" at_least="1"/>
+          <crossExpr>cp_a_zero_state</crossExpr>
+          <crossExpr>cp_b_zero_state</crossExpr>
+          <crossBin name="&lt;zero,zero&gt;" key="0" type="default">
+            <index>-1</index>
+            <contents coverageCount="1"/>
+          </crossBin>
+          <crossBin name="&lt;zero,nonzero&gt;" key="0" type="default">
+            <index>-1</index>
+            <contents coverageCount="1"/>
+          </crossBin>
+          <crossBin name="&lt;nonzero,zero&gt;" key="0" type="default">
+            <index>-1</index>
+            <contents coverageCount="1"/>
+          </crossBin>
+          <crossBin name="&lt;nonzero,nonzero&gt;" key="0" type="default">
+            <index>-1</index>
+            <contents coverageCount="110"/>
+          </crossBin>
+        </cross>
+      </cgInstance>
+    </covergroupCoverage>
+  </instanceCoverages>
+</UCIS>
