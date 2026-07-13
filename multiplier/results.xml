@@ -1,8 +1,8 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1783932038" />
-    <testcase name="multiplier_basic_test" classname="test_multiplier64_tree" file="/home/vsysuser/workspace/verif-desanv01/multiplier/test_multiplier64_tree.py" lineno="88" time="0.011644840240478516" sim_time_ns="2.0" ratio_time="171.7498873919987" />
-    <testcase name="multiplier_directed_test" classname="test_multiplier64_tree" file="/home/vsysuser/workspace/verif-desanv01/multiplier/test_multiplier64_tree.py" lineno="94" time="0.014467477798461914" sim_time_ns="24.0" ratio_time="1658.8931626044396" />
-    <testcase name="multiplier_randomised_test" classname="test_multiplier64_tree" file="/home/vsysuser/workspace/verif-desanv01/multiplier/test_multiplier64_tree.py" lineno="117" time="0.10169839859008789" sim_time_ns="200.0" ratio_time="1966.5993051290106" />
+    <property name="random_seed" value="1783932752" />
+    <testcase name="multiplier_basic_test" classname="test_multiplier64_tree" file="/home/vsysuser/workspace/verif-desanv01/multiplier/test_multiplier64_tree.py" lineno="88" time="0.011050701141357422" sim_time_ns="2.0" ratio_time="180.98399137001078" />
+    <testcase name="multiplier_directed_test" classname="test_multiplier64_tree" file="/home/vsysuser/workspace/verif-desanv01/multiplier/test_multiplier64_tree.py" lineno="94" time="0.013473272323608398" sim_time_ns="24.0" ratio_time="1781.3044540001063" />
+    <testcase name="multiplier_randomised_test" classname="test_multiplier64_tree" file="/home/vsysuser/workspace/verif-desanv01/multiplier/test_multiplier64_tree.py" lineno="117" time="0.08807373046875" sim_time_ns="200.0" ratio_time="2270.8246708246706" />
   </testsuite>
 </testsuites>
