@@ -1,0 +1,12 @@
+sim_build/
+__pycache__/
+.pytest_cache/
+results.xml
+*.fst
+*.vcd
+coverage.dat
+coverage.info
+coverage/
+cov.xml
+coverage_*.yml
+
