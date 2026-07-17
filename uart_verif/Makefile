@@ -1,28 +1,48 @@
+.DEFAULT_GOAL := sim
+# Cocotb test for the generated SHAKTI C-Class SoC UART.
+
 SIM ?= icarus
+WAVES ?= 1
 TOPLEVEL_LANG ?= verilog
 
-export TOP=mkTbSoc
+TOP := mkTbSoc
+PWD := $(shell pwd)
 
-#COMPILE_ARGS += -O3 --x-assign fast --x-initial fast --no-timing \
-                            --x-assign fast --x-initial fast --noassert \
-                            --bbox-sys -Wno-STMTDLY -Wno-SYMRSVDWORD -Wno-UNOPTFLAT \
-                            -Wno-WIDTH -Wno-lint -Wno-COMBDLY \
-                            -Wno-INITIALDLY --autoflush  --threads 1 \
-                            -DBSV_RESET_FIFO_HEAD -DBSV_RESET_FIFO_ARRAY \
-                            --output-split 20000 --output-split-ctrace 10000  \
-                            --vpi --public-flat-rw --prefix ${TOP} -I${PWD}/verilog
+export PYTHONPATH := $(PWD):$(PYTHONPATH)
 
-COMPILE_ARGS += -I ${PWD}/verilog -I /tools/bsc_build/bsc-2023.07-ubuntu-22.04/lib/Verilog/ -I ${PWD}/../common_verilog
+BSC_BIN := $(shell command -v bsc 2>/dev/null)
+BSC_LIBDIR := $(shell dirname $(BSC_BIN))/../lib/Verilog
+BSC_BRAM := $(BSC_LIBDIR)/BRAM1Load.v
 
-PWD=$(shell pwd)
+RTL_DIR := $(PWD)/../build/hw/verilog
+RTL_SOURCES := $(sort $(wildcard $(RTL_DIR)/*.v) $(wildcard $(RTL_DIR)/*.sv))
 
-export PYTHONPATH:=$(PWD):$(PYTHONPATH)
+VERILOG_SOURCES := $(RTL_SOURCES) $(BSC_BRAM)
 
-VERILOG_SOURCES=$(PWD)/../build/hw/verilog/*.v*
+COMPILE_ARGS += -g2012
+COMPILE_ARGS += -I$(PWD)/verilog
+COMPILE_ARGS += -I$(BSC_LIBDIR)
+COMPILE_ARGS += -I$(PWD)/../common_verilog
 
-VERILOG_SOURCES += $(shell which bsc | xargs dirname)/../lib/Verilog/BRAM1Load.v
+TOPLEVEL := $(TOP)
+MODULE := tx_uart
 
-TOPLEVEL = ${TOP}
-MODULE   := tx_uart
+.PHONY: preflight clean_all
+
+preflight:
+	@command -v python3 >/dev/null || (echo "ERROR: python3 not found"; exit 1)
+	@command -v cocotb-config >/dev/null || (echo "ERROR: cocotb-config not found"; exit 1)
+	@command -v iverilog >/dev/null || (echo "ERROR: iverilog not found"; exit 1)
+	@test -n "$(BSC_BIN)" || (echo "ERROR: bsc not found"; exit 1)
+	@test -f "$(BSC_BRAM)" || (echo "ERROR: BRAM1Load.v not found at $(BSC_BRAM)"; exit 1)
+	@test -d "$(RTL_DIR)" || (echo "ERROR: generated RTL directory is missing: $(RTL_DIR)"; exit 1)
+	@test -n "$(strip $(RTL_SOURCES))" || (echo "ERROR: no generated .v/.sv files found"; exit 1)
+	@grep -RqsE '^[[:space:]]*module[[:space:]]+$(TOP)([[:space:]#;(]|$$)' "$(RTL_DIR)" || \
+		(echo "ERROR: top module $(TOP) not found below $(RTL_DIR)"; exit 1)
+	@python3 -c "import cocotb; import cocotbext.axi; import cocotbext.uart; print('PASS: Python and cocotb dependencies found')"
+	@echo "PASS: found $(words $(RTL_SOURCES)) generated RTL source files"
 
 include $(shell cocotb-config --makefiles)/Makefile.sim
+
+clean_all: clean
+	rm -rf results.xml dump.fst dump.vcd uart_run.log sim_build __pycache__
